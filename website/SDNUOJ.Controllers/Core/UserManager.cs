@@ -223,6 +223,10 @@ namespace SDNUOJ.Controllers.Core
             {
                 return MethodResult.Failed("Username is too long!");
             }
+            if (entity.RealName.Length > UserRepository.REALNAME_MAXLEN)
+            {
+                return MethodResult.Failed("Realname is too long!");
+            }
 
             if (String.IsNullOrEmpty(password))
             {

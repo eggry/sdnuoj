@@ -14,6 +14,11 @@ namespace SDNUOJ.Entity
         public String UserName { get; set; }
 
         /// <summary>
+        /// 获取或设置姓名
+        /// </summary>
+        public String RealName { get; set; }
+
+        /// <summary>
         /// 获取或设置密码
         /// </summary>
         public String PassWord { get; set; }

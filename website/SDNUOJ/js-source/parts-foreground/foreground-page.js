@@ -143,7 +143,7 @@ SDNUOJ.page.highlight = (function () {
             matchBrackets: !simple,
             autofocus: !simple && !readonly,
             indentUnit: 4,
-            mode: getEditorMode(language),
+            mode: 'text/x-mysql',
             extraKeys: {
                 "F11": function (cm) {
                     cm.setOption("fullScreen", !cm.getOption("fullScreen"));

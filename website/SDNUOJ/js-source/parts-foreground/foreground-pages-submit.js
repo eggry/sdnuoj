@@ -24,7 +24,6 @@ SDNUOJ.pages.submitcode = (function () {
 
             $("#lang").change(function () {
                 var langID = $("#lang").val();
-
                 user.setLastLanguage(langID);
                 highlight.setAllLanguage(langID);
             });

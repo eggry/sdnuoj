@@ -115,7 +115,8 @@ namespace SDNUOJ.Controllers
                 UserName = form["username"],
                 NickName = form["nickname"],
                 School = form["school"],
-                Email = form["email"]
+                Email = form["email"],
+                RealName = form["realname"],
             };
 
             String userip = this.GetCurrentUserIP();

@@ -30,22 +30,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("SDNUOJ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("数据库实验平台", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @if (SDNUOJ.Configuration.ConfigurationManager.AllowMainProblem) {
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Problem <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">练习<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Problem Set", "Set", "Problem", new { area = "" }, null)</li>
-                            <li>@Html.ActionLink("Problem Category", "Category", "Problem", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("自由练习", "Set", "Problem", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("题目类别", "Category", "Problem", new { area = "" }, null)</li>
                         </ul>
                     </li> }
                     @if (SDNUOJ.Configuration.ConfigurationManager.AllowContest) {
                     <li id="menu-contest" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Contest
+                            实验列表
                             @{
                                 Int32 CurrentContest = 0;
                                 Int32.TryParse(ViewBag.CurrentContestCount as String, out CurrentContest);
@@ -55,27 +55,27 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="@Url.Action("Current", "Contests", new { area = "" }, null)">Current Contest
+                                <a href="@Url.Action("Current", "Contests", new { area = "" }, null)">进行中的实验
                                     @if (CurrentContest > 0) { <span class="badge badge-danger">@CurrentContest</span> }
                                 </a>
                             </li>
-                            <li>@Html.ActionLink("Passed Contest", "Passed", "Contests", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("历史实验", "Passed", "Contests", new { area = "" }, null)</li>
                         </ul>
                     </li> }
                     @if (SDNUOJ.Configuration.ConfigurationManager.AllowMainRanklist) { <li>@Html.ActionLink("Ranklist", "List", "Rank", new { area = "" }, null)</li> }
-                    @if (SDNUOJ.Configuration.ConfigurationManager.AllowMainStatus) { <li>@Html.ActionLink("Status", "List", "Status", new { area = "" }, null)</li> }
-                    @if (SDNUOJ.Configuration.ConfigurationManager.AllowMainForum) { <li>@Html.ActionLink("Discuss", "Main", "Forum", new { area = "" }, null)</li> }
-                    <li class="dropdown">
+                    @if (SDNUOJ.Configuration.ConfigurationManager.AllowMainStatus) { <li>@Html.ActionLink("评测列表", "List", "Status", new { area = "" }, null)</li> }
+                    @if (SDNUOJ.Configuration.ConfigurationManager.AllowMainForum) { <li>@Html.ActionLink("答疑区", "Main", "Forum", new { area = "" }, null)</li> }
+                    @if (SDNUOJ.Configuration.ConfigurationManager.AllowResource) { <li>@Html.ActionLink("实验资源", "Index", "Resource", new { area = "" }, null)</li> }
+                    @*<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>@Html.ActionLink("F.A.Q", "Index", "FAQ", new { area = "" }, null)</li>
                             <li>@Html.ActionLink("News", "List", "News", new { area = "" }, null)</li>
-                            @if (SDNUOJ.Configuration.ConfigurationManager.AllowResource) { <li>@Html.ActionLink("Resource", "Index", "Resource", new { area = "" }, null)</li> }
                             @if (SDNUOJ.Configuration.ConfigurationManager.AllowContest) {
                             <li class="divider"></li>
                             <li>@Html.ActionLink("Recent Contest", "Recent", "Contests", new { area = "" }, null)</li> }
                         </ul>
-                    </li>
+                    </li>*@
                 </ul>
                 @using (Html.BeginForm("Login", "User", new { area = "" }, FormMethod.Post, new { @id = "login-form", @class = "navbar-form navbar-right", @style = "display:none;", @data_verify = "true" }))
                 {

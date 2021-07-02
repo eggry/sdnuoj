@@ -46,8 +46,10 @@ namespace SDNUOJ.Data
         internal const String LASTIP = "USER_LASTIP";
         internal const String LASTDATE = "USER_LASTDATE";
         internal const String RANK = "USER_RANK";
+        internal const String REALNAME = "USER_REALNAME";
 
         public const Int32 USERNAME_MAXLEN = 20;
+        public const Int32 REALNAME_MAXLEN = 20;
         public const Int32 NICKNAME_MAXLEN = 40;
         public const Int32 EMAIL_MAXLEN = 40;
         public const Int32 SCHOOL_MAXLEN = 40;
@@ -66,6 +68,7 @@ namespace SDNUOJ.Data
             UserEntity entity = new UserEntity();
 
             entity.UserName = this.LoadString(args, USERNAME);
+            entity.RealName = this.LoadString(args, REALNAME);
             entity.PassWord = this.LoadString(args, PASSWORD);
             entity.NickName = this.LoadString(args, NICKNAME);
             entity.Email = this.LoadString(args, EMAIL);
@@ -106,6 +109,7 @@ namespace SDNUOJ.Data
                 .Set(PERMISSION, (Int32)entity.Permission)
                 .Set(CREATEIP, entity.CreateIP)
                 .Set(CREATEDATE, entity.CreateDate)
+                .Set(REALNAME,entity.RealName)
                 .Result();
         }
         #endregion
